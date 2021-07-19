@@ -18,8 +18,10 @@
         </a>
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
         <ul class="navbar-nav ml-auto ">
+         <script src="https://kit.fontawesome.com/8a2ca55f79.js" crossorigin="anonymous"></script>
          <% if user_signed_in? %>
           <li>
+            <a class="fas fa-home"></a>
             <%= link_to "Home", root_path %>
           </li>
           <li>
