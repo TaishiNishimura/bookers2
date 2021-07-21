@@ -9,6 +9,6 @@ class User < ApplicationRecord
   attachment :image
 
   validates :name, presence: true, uniqueness: true , length: { in: 2..20}
-  #validates :introduction, presence: true, length: { maximum: 50 }
+  validates :introduction, length: { maximum: 50 }
 
 end
