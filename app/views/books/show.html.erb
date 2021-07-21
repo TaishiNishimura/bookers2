@@ -1,5 +1,5 @@
 <main>
-  <%= render 'books/info', books: @books %>
+  <%= render 'books/info', book: @book_new, user: @user %>
 
    <div class="col-md-8 offset-md-1">
      <h2>Book detail</h2>
@@ -11,7 +11,7 @@
              <%= attachment_image_tag @user, :image, :fill, 40, 40, format: 'jpeg', fallback: "no_image.jpg" %>
             </td>
             <td>
-             <%= link_to current_user.name , user_path %>
+             <%= link_to @user.name , user_path(@user) %>
             </td>
             <td>
               <%= link_to book_path(@book.id) do %>
@@ -19,7 +19,7 @@
               <% end %>
             </td>
             <td>
-              <%= @book.Opinion %>
+              <%= @book.body %>
             </td>
             <td>
                <%= link_to 'Edit', edit_book_path, class: "btn btn-sm btn-success" %>
