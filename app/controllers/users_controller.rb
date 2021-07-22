@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  before_action :authenticate_user!
   def index
     @users = User.all
     @book_new = Book.new
@@ -33,7 +34,7 @@ class UsersController < ApplicationController
 
   private
   def user_params
-  params.require(:user).permit(:name, :image, :introduction)
+  params.require(:user).permit(:name, :profile_image, :introduction)
   end
 
 end
